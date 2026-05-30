@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GestorPro — Administrador de Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <header>
+    <div class="logo">Gestor<span>Pro</span></div>
+    <div class="tagline">Módulo 3 · DOM · LocalStorage · Fetch API</div>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <p class="card-title">Agregar Producto</p>
+
+      <div id="notificacion"></div>
+
+      <div class="form-grid" style="margin-top: 16px;">
+        <div class="form-group">
+          <label for="inputNombre">Nombre del producto</label>
+          <input type="text" id="inputNombre" placeholder="ej. Monitor 4K" maxlength="60" />
+        </div>
+
+        <div class="form-group">
+          <label for="inputPrecio">Precio (USD)</label>
+          <input type="number" id="inputPrecio" placeholder="ej. 349.99" min="0" step="0.01" />
+        </div>
+
+        <div class="form-group full">
+          <label for="inputDesc">Descripción</label>
+          <textarea id="inputDesc" rows="2" placeholder="ej. Panel IPS 144Hz, resolución 3840×2160"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-primary" id="btnAgregar">+ Agregar</button>
+        <button class="btn-secondary" id="btnLimpiarForm">Limpiar</button>
+      </div>
+    </section>
+
+
+    <section class="card">
+      <p class="card-title">Sincronización API</p>
+      <div class="api-bar">
+        <div class="status-dot" id="puntito"></div>
+        <span id="estadoApi">Sin conectar</span>
+        <button class="btn-secondary" id="btnSincronizar">↓ Traer desde API</button>
+        <button class="btn-secondary" id="btnLimpiarStorage">Limpiar storage</button>
+      </div>
+    </section>
+
+
+    <section class="card">
+      <p class="card-title">Productos</p>
+      <input type="text" id="filtroTexto" placeholder="Buscar por nombre…" />
+      <div id="contadorProductos">0 productos</div>
+      <ul id="listaProductos"></ul>
+    </section>
+
+    <section class="card">
+      <p class="card-title">Registro de actividad</p>
+      <div id="logContainer"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
